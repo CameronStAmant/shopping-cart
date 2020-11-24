@@ -1,7 +1,7 @@
-const Cart = () => {
+const Cart = (props) => {
   return (
     <div>
-      <div>Looks like your cart is empty.</div>
+      <div>{props.cart}</div>
     </div>
   );
 };

@@ -20,16 +20,15 @@ const ListItem = (props) => {
   }, []);
 
   const add = (event) => {
-    console.log(typeof value);
-    props.addToCart(parseInt(value));
+    let new1 = [dImg, parseInt(value)];
+    // props.addToCart(new1[1]);
+    props.cartItems(new1);
     event.preventDefault();
   };
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-
-  // const onChange = () => {};
 
   return (
     <div>
@@ -40,13 +39,10 @@ const ListItem = (props) => {
           <input
             type="number"
             id="items"
-            // max="2"
-            // min="1"
             value={value}
             onChange={handleChange}
           />
           <input type="submit" />
-          {/* <button onClick={add}>Add</button> */}
         </form>
       </div>
     </div>

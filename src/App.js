@@ -8,19 +8,40 @@ import { useState } from 'react';
 
 const App = () => {
   const [ShoppingCart, setShoppingCart] = useState(0);
+  const [ShoppingCartItems, setShoppingCartItems] = useState([]);
 
-  const add = (amount) => {
-    setShoppingCart((ShoppingCart) => ShoppingCart + amount);
+  // const addCartCount = (amount) => {
+  //   setShoppingCart((ShoppingCart) => ShoppingCart + amount);
+  // };
+
+  const addCartItem = (item) => {
+    setShoppingCartItems((ShoppingCartItems) => {
+      let newList = ShoppingCartItems;
+      newList.push(item);
+      let counter = 0;
+      for (let i = 0; i < newList.length; i++) {
+        counter += newList[i][1];
+      }
+      setShoppingCart(counter);
+      // console.log(counter);
+      return newList;
+    });
   };
 
   return (
     <div>
-      <Navbar cart={ShoppingCart} />
+      <Navbar cartCount={ShoppingCart} />
       <Switch>
         <Route path="/shop">
-          <Shop cart={ShoppingCart} addToCart={(amount) => add(amount)} />
+          <Shop
+            // cartCount={ShoppingCart}
+            // addToCart={(amount) => addCartCount(amount)}
+            cartItems={(item) => addCartItem(item)}
+          />
         </Route>
-        <Route path="/cart" component={Cart} />
+        <Route path="/cart">
+          <Cart cartCount={ShoppingCart} />
+        </Route>
         <Route path="/" component={Home} />
       </Switch>
     </div>

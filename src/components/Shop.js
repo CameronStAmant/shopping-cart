@@ -4,7 +4,11 @@ import './Shop.css';
 const Shop = (props) => {
   return (
     <div className="ListItems">
-      <ListItem cart={props.cart} addToCart={props.addToCart} />
+      <ListItem
+        // cartCount={props.cartCount}
+        // addToCart={props.addToCart}
+        cartItems={props.cartItems}
+      />
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Navbar = (props) => {
         {'|'}
         <Link to="/cart">
           <li>Cart</li>
-          <li>{props.cart}</li>
+          <li>{props.cartCount}</li>
         </Link>
       </ul>
     </div>
