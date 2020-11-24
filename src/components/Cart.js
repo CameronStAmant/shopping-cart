@@ -5,9 +5,7 @@ const Cart = (props) => {
   const Items = props.cartItems.map((item) => {
     return (
       <div>
-        {/* <div> */}
         <ListCartItem picture={item[0]} />
-        {/* </div> */}
       </div>
     );
   });
