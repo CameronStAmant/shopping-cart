@@ -5,6 +5,110 @@ const ListItem = (props) => {
   const [dImg, setDImg] = useState({});
   const [value, setValue] = useState(1);
   const cost = Math.floor(Math.random() * 200 + 50);
+  const nameList = [
+    'Abby',
+    'Abe',
+    'Addie',
+    'Abbott',
+    'Alexis',
+    'Ace',
+    'Alice',
+    'Aero',
+    'Allie',
+    'Aiden',
+    'Alyssa',
+    'Amber',
+    'Albert',
+    'Angel',
+    'Alden',
+    'Anna',
+    'Alex',
+    'Annie',
+    'Alfie',
+    'Ariel',
+    'Alvin',
+    'Ashley',
+    'Amos',
+    'Aspen',
+    'Andy',
+    'Athena',
+    'Angus',
+    'Autumn',
+    'Apollo',
+    'Ava',
+    'Archie',
+    'Avery',
+    'Aries',
+    'Baby',
+    'Artie',
+    'Bailey',
+    'Ash',
+    'Basil',
+    'Austin',
+    'Bean',
+    'Axel',
+    'Bella',
+    'Bailey',
+    'Belle',
+    'Bandit',
+    'Betsy',
+    'Barkley',
+    'Betty',
+    'Barney',
+    'Bianca',
+    'Baron',
+    'Birdie',
+    'Baxter',
+    'Biscuit',
+    'Bear',
+    'Blondie',
+    'Beau',
+    'Blossom',
+    'Benji',
+    'Bonnie',
+    'Benny',
+    'Brandy',
+    'Bentley',
+    'Brooklyn',
+    'Billy',
+    'Brownie',
+    'Bingo',
+    'Buffy',
+    'Blake',
+    'Callie',
+    'Blaze',
+    'Camilla',
+    'Blue',
+    'Candy',
+    'Bo',
+    'Carla',
+    'Boomer',
+    'Carly',
+    'Brady',
+    'Carmela',
+    'Brody',
+    'Casey',
+    'Brownie',
+    'Cassie',
+    'Bruce',
+    'Chance',
+    'Bruno',
+    'Chanel',
+    'Brutus',
+    'Chloe',
+    'Bubba',
+    'Cinnamon',
+    'Buck',
+    'Cleo',
+    'Buddy',
+    'Coco',
+    'Buster',
+    'Cookie',
+    'Butch',
+    'Cricket',
+    'Buzz',
+  ];
+  const name = nameList[Math.floor(Math.random() * 100)];
 
   let dogData;
   const fetchDogImage = async () => {
@@ -21,7 +125,7 @@ const ListItem = (props) => {
   }, []);
 
   const add = (event) => {
-    let new1 = [dImg, parseInt(value), cost];
+    let new1 = [dImg, parseInt(value), cost, name];
     // props.addToCart(new1[1]);
     props.cartItems(new1);
     event.preventDefault();
@@ -35,7 +139,9 @@ const ListItem = (props) => {
     <div>
       <div className="ListItem">
         <img src={dImg.message} alt="dog" height="300px" width="300px" />
-        <p>Dog | ${cost} | Add to cart</p>
+        <p>
+          {name} | ${cost} | Add to cart
+        </p>
         <form onSubmit={add}>
           <input
             type="number"

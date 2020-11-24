@@ -12,6 +12,7 @@ const ListCartItem = (props) => {
         />
         <p>Quantity: {props.amount}</p>
         <p>Cost: ${props.cost}</p>
+        <p>Name: {props.name}</p>
       </div>
     </div>
   );
