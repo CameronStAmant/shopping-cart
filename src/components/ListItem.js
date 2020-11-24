@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 const ListItem = (props) => {
   const [dImg, setDImg] = useState({});
   const [value, setValue] = useState(1);
+  const cost = Math.floor(Math.random() * 200 + 50);
 
   let dogData;
   const fetchDogImage = async () => {
@@ -20,7 +21,7 @@ const ListItem = (props) => {
   }, []);
 
   const add = (event) => {
-    let new1 = [dImg, parseInt(value)];
+    let new1 = [dImg, parseInt(value), cost];
     // props.addToCart(new1[1]);
     props.cartItems(new1);
     event.preventDefault();
@@ -34,7 +35,7 @@ const ListItem = (props) => {
     <div>
       <div className="ListItem">
         <img src={dImg.message} alt="dog" height="300px" width="300px" />
-        <p>Dog | $100 | Add to cart</p>
+        <p>Dog | ${cost} | Add to cart</p>
         <form onSubmit={add}>
           <input
             type="number"

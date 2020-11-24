@@ -5,7 +5,7 @@ const Cart = (props) => {
   const Items = props.cartItems.map((item) => {
     return (
       <div>
-        <ListCartItem picture={item[0]} amount={item[1]} />
+        <ListCartItem picture={item[0]} amount={item[1]} cost={item[2]} />
       </div>
     );
   });

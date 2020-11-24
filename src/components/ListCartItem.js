@@ -11,6 +11,7 @@ const ListCartItem = (props) => {
           width="300px"
         />
         <p>Quantity: {props.amount}</p>
+        <p>Cost: ${props.cost}</p>
       </div>
     </div>
   );
