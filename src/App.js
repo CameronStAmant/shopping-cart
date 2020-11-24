@@ -18,9 +18,8 @@ const App = () => {
     for (let i = 0; i < newList.length; i++) {
       counter += newList[i][1];
     }
-    console.log(`this is newList: ${newList}`);
     setShoppingCart(counter);
-    // console.log(newList);
+    console.log(ShoppingCartItems);
     return newList;
     // });
   };

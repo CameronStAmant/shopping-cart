@@ -1,6 +1,7 @@
 import './ListItem.css';
 
 const ListCartItem = (props) => {
+  console.log(props);
   return (
     <div>
       <div className="ListItem">
@@ -10,7 +11,7 @@ const ListCartItem = (props) => {
           height="300px"
           width="300px"
         />
-        <p>Dog</p>
+        <p>Quantity: {props.amount}</p>
       </div>
     </div>
   );
