@@ -6,6 +6,7 @@ const Cart = (props) => {
 
   const itemTotal = props.cartItems.map((item) => {
     total += item[1] * item[2];
+    return total;
   });
 
   const Items = props.cartItems.map((item) => {
