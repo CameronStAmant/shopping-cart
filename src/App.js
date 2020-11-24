@@ -10,10 +10,12 @@ const App = () => {
   const [ShoppingCart, setShoppingCart] = useState(0);
   const [ShoppingCartItems, setShoppingCartItems] = useState([]);
 
-  const addCartItem = (item) => {
+  const addCartItem = (item = null) => {
     // setShoppingCartItems((ShoppingCartItems) => {
     let newList = ShoppingCartItems;
-    newList.push(item);
+    if (item !== null) {
+      newList.push(item);
+    }
     let counter = 0;
     for (let i = 0; i < newList.length; i++) {
       counter += newList[i][1];
@@ -21,6 +23,12 @@ const App = () => {
     setShoppingCart(counter);
     return newList;
     // });
+  };
+
+  const removeCartItem = (item) => {
+    let newList = ShoppingCartItems;
+    newList.splice(item, 1);
+    addCartItem();
   };
 
   return (
@@ -31,7 +39,10 @@ const App = () => {
           <Shop cartItems={(item) => addCartItem(item)} />
         </Route>
         <Route path="/cart">
-          <Cart cartItems={ShoppingCartItems} />
+          <Cart
+            cartItems={ShoppingCartItems}
+            removeItem={(item) => removeCartItem(item)}
+          />
         </Route>
         <Route path="/" component={Home} />
       </Switch>

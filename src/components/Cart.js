@@ -9,7 +9,7 @@ const Cart = (props) => {
     return total;
   });
 
-  const Items = props.cartItems.map((item) => {
+  const Items = props.cartItems.map((item, index) => {
     return (
       <div>
         <ListCartItem
@@ -17,6 +17,8 @@ const Cart = (props) => {
           amount={item[1]}
           cost={item[2]}
           name={item[3]}
+          index={index}
+          removeItem={props.removeItem}
         />
       </div>
     );
