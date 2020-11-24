@@ -11,16 +11,18 @@ const App = () => {
   const [ShoppingCartItems, setShoppingCartItems] = useState([]);
 
   const addCartItem = (item) => {
-    setShoppingCartItems((ShoppingCartItems) => {
-      let newList = ShoppingCartItems;
-      newList.push(item);
-      let counter = 0;
-      for (let i = 0; i < newList.length; i++) {
-        counter += newList[i][1];
-      }
-      setShoppingCart(counter);
-      return newList;
-    });
+    // setShoppingCartItems((ShoppingCartItems) => {
+    let newList = ShoppingCartItems;
+    newList.push(item);
+    let counter = 0;
+    for (let i = 0; i < newList.length; i++) {
+      counter += newList[i][1];
+    }
+    console.log(`this is newList: ${newList}`);
+    setShoppingCart(counter);
+    // console.log(newList);
+    return newList;
+    // });
   };
 
   return (
