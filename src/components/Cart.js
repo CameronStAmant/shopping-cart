@@ -2,6 +2,12 @@ import ListCartItem from './ListCartItem';
 import './Cart.css';
 
 const Cart = (props) => {
+  let total = 0;
+
+  const itemTotal = props.cartItems.map((item) => {
+    total += item[1] * item[2];
+  });
+
   const Items = props.cartItems.map((item) => {
     return (
       <div>
@@ -14,7 +20,12 @@ const Cart = (props) => {
       </div>
     );
   });
-  return <div className="ListCartItems">{Items}</div>;
+  return (
+    <div className="ListCartItems">
+      <div>Total: ${total}</div>
+      {Items}
+    </div>
+  );
 };
 
 export default Cart;
