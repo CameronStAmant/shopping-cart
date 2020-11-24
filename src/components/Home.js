@@ -14,11 +14,12 @@ const Home = () => {
 
   useEffect(() => {
     fetchDogImage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
-      <img src={dImg.message} alt="dog" widht="200px" height="200px" />
+      <img src={dImg.message} alt="dog" width="200px" height="200px" />
       <p>
         Because every dog needs a family. Find your next pet{' '}
         <Link to="/shop">here</Link>.
