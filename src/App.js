@@ -10,10 +10,6 @@ const App = () => {
   const [ShoppingCart, setShoppingCart] = useState(0);
   const [ShoppingCartItems, setShoppingCartItems] = useState([]);
 
-  // const addCartCount = (amount) => {
-  //   setShoppingCart((ShoppingCart) => ShoppingCart + amount);
-  // };
-
   const addCartItem = (item) => {
     setShoppingCartItems((ShoppingCartItems) => {
       let newList = ShoppingCartItems;
@@ -23,7 +19,6 @@ const App = () => {
         counter += newList[i][1];
       }
       setShoppingCart(counter);
-      // console.log(counter);
       return newList;
     });
   };
@@ -33,14 +28,10 @@ const App = () => {
       <Navbar cartCount={ShoppingCart} />
       <Switch>
         <Route path="/shop">
-          <Shop
-            // cartCount={ShoppingCart}
-            // addToCart={(amount) => addCartCount(amount)}
-            cartItems={(item) => addCartItem(item)}
-          />
+          <Shop cartItems={(item) => addCartItem(item)} />
         </Route>
         <Route path="/cart">
-          <Cart cartCount={ShoppingCart} />
+          <Cart cartItems={ShoppingCartItems} />
         </Route>
         <Route path="/" component={Home} />
       </Switch>

@@ -1,9 +1,14 @@
+import ListCartItem from './ListCartItem';
+
 const Cart = (props) => {
-  return (
-    <div>
-      <div>{props.cart}</div>
-    </div>
-  );
+  const Items = props.cartItems.map((item) => {
+    return (
+      <div>
+        <ListCartItem picture={item[0]} />
+      </div>
+    );
+  });
+  return <div>{Items}</div>;
 };
 
 export default Cart;
