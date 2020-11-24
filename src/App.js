@@ -19,7 +19,6 @@ const App = () => {
       counter += newList[i][1];
     }
     setShoppingCart(counter);
-    console.log(ShoppingCartItems);
     return newList;
     // });
   };

@@ -1,7 +1,6 @@
 import './ListItem.css';
 
 const ListCartItem = (props) => {
-  console.log(props);
   return (
     <div>
       <div className="ListItem">
