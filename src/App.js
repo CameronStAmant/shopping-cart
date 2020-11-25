@@ -11,7 +11,7 @@ const App = () => {
   const [ShoppingCartItems, setShoppingCartItems] = useState([]);
 
   const addCartItem = (item = null) => {
-    let newList = ShoppingCartItems;
+    let newList = [...ShoppingCartItems];
     if (item !== null) {
       if (newList[0] !== undefined) {
         let duplicateChecker = 0;
@@ -33,6 +33,7 @@ const App = () => {
       counter += newList[i][1];
     }
     setShoppingCart(counter);
+    setShoppingCartItems(newList);
     return newList;
   };
 
