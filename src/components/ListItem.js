@@ -121,7 +121,6 @@ const ListItem = (props) => {
 
   useEffect(() => {
     fetchDogImage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const add = (event) => {

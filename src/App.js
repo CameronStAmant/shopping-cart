@@ -17,7 +17,7 @@ const App = () => {
         let duplicateChecker = 0;
         for (let i = 0; i < newList.length; i++) {
           if (item[0].message === newList[i][0].message) {
-            newList[i][1] += 1;
+            newList[i][1] += item[1];
             duplicateChecker += 1;
           }
         }
