@@ -140,17 +140,17 @@ const ListItem = (props) => {
       <div className="ListItem">
         <img src={dImg.message} alt="dog" height="300px" width="300px" />
         <p>
-          {name} | ${cost}
+          {name} | ${cost}{' '}
+          <form onSubmit={add} id="form">
+            <input
+              type="number"
+              id="items"
+              value={value}
+              onChange={handleChange}
+            />
+            <input type="submit" value="Add" />
+          </form>
         </p>
-        <form onSubmit={add}>
-          <input
-            type="number"
-            id="items"
-            value={value}
-            onChange={handleChange}
-          />
-          <input type="submit" value="Add" />
-        </form>
       </div>
     </div>
   );

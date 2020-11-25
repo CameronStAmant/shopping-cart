@@ -10,6 +10,10 @@ const Shop = (props) => {
       <ListItem cartItems={props.cartItems} />
       <ListItem cartItems={props.cartItems} />
       <ListItem cartItems={props.cartItems} />
+      <ListItem cartItems={props.cartItems} />
+      <ListItem cartItems={props.cartItems} />
+      <ListItem cartItems={props.cartItems} />
+      <ListItem cartItems={props.cartItems} />
     </div>
   );
 };
