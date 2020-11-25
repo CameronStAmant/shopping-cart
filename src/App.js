@@ -31,6 +31,16 @@ const App = () => {
     addCartItem();
   };
 
+  const editQuantity = (upOrDown, index) => {
+    let newList = ShoppingCartItems;
+    if (upOrDown === 'increase') {
+      newList[index][1] += 1;
+    } else if (upOrDown === 'decrease') {
+      newList[index][1] -= 1;
+    }
+    addCartItem();
+  };
+
   return (
     <div>
       <Navbar cartCount={ShoppingCart} />
@@ -42,6 +52,7 @@ const App = () => {
           <Cart
             cartItems={ShoppingCartItems}
             removeItem={(item) => removeCartItem(item)}
+            editQuantity={(upOrDown, index) => editQuantity(upOrDown, index)}
           />
         </Route>
         <Route path="/" component={Home} />

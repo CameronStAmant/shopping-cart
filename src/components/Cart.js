@@ -19,6 +19,7 @@ const Cart = (props) => {
           name={item[3]}
           index={index}
           removeItem={props.removeItem}
+          editQuantity={props.editQuantity}
         />
       </div>
     );
