@@ -6,7 +6,7 @@ const Navbar = (props) => {
     <div className="nav">
       <img
         id="navLogo"
-        src="%PUBLIC_URL%/images/logo.png"
+        src="images/logo.png"
         alt="paws in the shape of a heart"
       />
       <ul className="navItems">
