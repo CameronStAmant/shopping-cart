@@ -1,16 +1,3 @@
-.nav {
-  display: flex;
-  background-color: grey;
-  margin: 0px;
-}
-
 body {
-  margin: opx;
-}
-
-.navItems {
-  display: inline-flex;
-  list-style-type: none;
-  position: relative;
-  left: 50%;
+  margin: 0px;
 }

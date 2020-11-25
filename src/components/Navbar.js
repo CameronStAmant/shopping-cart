@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = (props) => {
   return (
     <div className="nav">
       <img
+        id="navLogo"
         src="../images/logo.png"
         alt="paws in the shape of a heart"
-        width="50px"
-        height="50px"
       />
       <ul className="navItems">
         <Link to="/">
@@ -19,8 +19,7 @@ const Navbar = (props) => {
         </Link>
         {'|'}
         <Link to="/cart">
-          <li>Cart</li>
-          <li>{props.cartCount}</li>
+          <li>Cart {props.cartCount}</li>
         </Link>
       </ul>
     </div>
