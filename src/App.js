@@ -57,6 +57,11 @@ const App = () => {
     addCartItem();
   };
 
+  const checkout = () => {
+    setShoppingCartItems([]);
+    setShoppingCart(0);
+  };
+
   return (
     <div>
       <Navbar cartCount={ShoppingCart} />
@@ -69,6 +74,7 @@ const App = () => {
             cartItems={ShoppingCartItems}
             removeItem={(item) => removeCartItem(item)}
             editQuantity={(upOrDown, index) => editQuantity(upOrDown, index)}
+            checkout={checkout}
           />
         </Route>
         <Route path="/" component={Home} />
