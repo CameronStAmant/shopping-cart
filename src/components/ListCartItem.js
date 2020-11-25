@@ -19,13 +19,12 @@ const ListCartItem = (props) => {
           width="300px"
         />
         <p>
-          Quantity: {props.amount} Cost: ${props.cost} Name: {props.name}
+          Cost: ${props.cost} | Name: {props.name}
+          <button onClick={() => editQuantity('decrease')}>-</button>
+          {props.amount}
+          <button onClick={() => editQuantity('increase')}>+</button>
+          <button onClick={remove}>Remove</button>
         </p>
-        <p>Edit quantity</p>
-        <button onClick={() => editQuantity('increase')}>Increase</button>
-        <button onClick={() => editQuantity('decrease')}>Decrease</button>
-
-        <button onClick={remove}>Remove</button>
       </div>
     </div>
   );

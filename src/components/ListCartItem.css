@@ -1,0 +1,16 @@
+.ListItem {
+  width: 300px;
+  height: 300px;
+  border: solid black;
+  margin: 8px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#form {
+  display: inline;
+}
+
+input {
+  width: 14%;
+}
