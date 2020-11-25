@@ -145,6 +145,7 @@ const ListItem = (props) => {
               type="number"
               id="items"
               value={value}
+              min="1"
               onChange={handleChange}
             />
             <input type="submit" value="Add" />
