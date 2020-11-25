@@ -25,9 +25,9 @@ const Cart = (props) => {
     );
   });
   return (
-    <div className="ListCartItems">
-      <div>Total: ${total}</div>
-      {Items}
+    <div id="total">
+      Total: ${total} <button>Checkout</button>
+      <div className="ListCartItems">{Items}</div>
     </div>
   );
 };

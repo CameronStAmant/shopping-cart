@@ -3,3 +3,10 @@
   flex-wrap: wrap;
   padding-bottom: 30px;
 }
+
+#total {
+  /* display: block; */
+  /* position: fixed;
+  left: 50px; */
+  text-align: center;
+}
