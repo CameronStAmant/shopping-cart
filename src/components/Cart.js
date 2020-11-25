@@ -24,9 +24,13 @@ const Cart = (props) => {
       </div>
     );
   });
+
+  const checkout = () => {
+    alert('Checkout was not implemented.');
+  };
   return (
     <div id="total">
-      Total: ${total} <button>Checkout</button>
+      Total: ${total} <button onClick={checkout}>Checkout</button>
       <div className="ListCartItems">{Items}</div>
     </div>
   );
