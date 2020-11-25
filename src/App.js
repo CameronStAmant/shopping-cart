@@ -47,7 +47,11 @@ const App = () => {
     if (upOrDown === 'increase') {
       newList[index][1] += 1;
     } else if (upOrDown === 'decrease') {
-      newList[index][1] -= 1;
+      if (newList[index][1] === 1) {
+        removeCartItem(index);
+      } else {
+        newList[index][1] -= 1;
+      }
     }
     addCartItem();
   };

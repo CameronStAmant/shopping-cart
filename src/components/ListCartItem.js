@@ -31,5 +31,3 @@ const ListCartItem = (props) => {
 };
 
 export default ListCartItem;
-
-// add edit quantity buttons on cart page
