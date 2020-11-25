@@ -11,7 +11,7 @@ const Cart = (props) => {
 
   const Items = props.cartItems.map((item, index) => {
     return (
-      <div>
+      <div key={index}>
         <ListCartItem
           picture={item[0]}
           amount={item[1]}
