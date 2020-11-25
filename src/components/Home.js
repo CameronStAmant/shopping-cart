@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
   const [dImg, setDImg] = useState({});
@@ -19,8 +20,8 @@ const Home = () => {
 
   return (
     <div>
-      <img src={dImg.message} alt="dog" width="200px" height="200px" />
-      <p>
+      <img id="mainImage" src={dImg.message} alt="dog" />
+      <p id="mainText">
         Because every dog needs a family. Find your next pet{' '}
         <Link to="/shop">here</Link>.
       </p>
