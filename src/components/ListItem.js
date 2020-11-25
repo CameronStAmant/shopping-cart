@@ -126,8 +126,7 @@ const ListItem = (props) => {
 
   const add = (event) => {
     let new1 = [dImg, parseInt(value), cost, name];
-    // props.addToCart(new1[1]);
-    props.cartItems(new1);
+    props.shopItems(new1);
     event.preventDefault();
   };
 
@@ -139,7 +138,7 @@ const ListItem = (props) => {
     <div>
       <div className="ListItem">
         <img src={dImg.message} alt="dog" height="300px" width="300px" />
-        <p>
+        <div>
           {name} | ${cost}{' '}
           <form onSubmit={add} id="form">
             <input
@@ -150,7 +149,7 @@ const ListItem = (props) => {
             />
             <input type="submit" value="Add" />
           </form>
-        </p>
+        </div>
       </div>
     </div>
   );

@@ -11,10 +11,22 @@ const App = () => {
   const [ShoppingCartItems, setShoppingCartItems] = useState([]);
 
   const addCartItem = (item = null) => {
-    // setShoppingCartItems((ShoppingCartItems) => {
     let newList = ShoppingCartItems;
     if (item !== null) {
-      newList.push(item);
+      if (newList[0] !== undefined) {
+        let duplicateChecker = 0;
+        for (let i = 0; i < newList.length; i++) {
+          if (item[0].message === newList[i][0].message) {
+            newList[i][1] += 1;
+            duplicateChecker += 1;
+          }
+        }
+        if (duplicateChecker === 0) {
+          newList.push(item);
+        }
+      } else if (newList[0] === undefined) {
+        newList.push(item);
+      }
     }
     let counter = 0;
     for (let i = 0; i < newList.length; i++) {
@@ -22,7 +34,6 @@ const App = () => {
     }
     setShoppingCart(counter);
     return newList;
-    // });
   };
 
   const removeCartItem = (item) => {
@@ -46,7 +57,7 @@ const App = () => {
       <Navbar cartCount={ShoppingCart} />
       <Switch>
         <Route path="/shop">
-          <Shop cartItems={(item) => addCartItem(item)} />
+          <Shop shopItems={(item) => addCartItem(item)} />
         </Route>
         <Route path="/cart">
           <Cart
